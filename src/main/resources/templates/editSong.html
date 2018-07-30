@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Song</title>
+</head>
+
+<body>
+<h1>Edit Song</h1>
+
+<p>ID: <span th:text="${id}"/> </p>
+<form id="edit-form" th:action="'/api/songs/' + ${id}" method="PUT">
+    Name: <input type="text" name="name" th:value="name"/>
+    Artist: <input type="text" name="artist" th:value="artist"/>
+    Album: <input type="text" name="album" th:value="album"/>
+    Release Year: <input type="number" name="releaseYear" th:value="releaseYear"/>
+    <input type="submit" value="Update"/>
+    <button id="deleteSong">DELETE</button>
+</form>
+<script src="\js\form.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Song Database</title>
+</head>
+
+<body>
+<header>
+    <a href="/songs/new">Add New Song</a>
+</header>
+<p>
+    <ul>
+        <li th:each="song : ${songs}">
+            ID: <span th:text="${song.id}"/><br>
+            <span th:text="${song.name}" /> by
+            <span th:text="${song.artist}" />  from the album
+            <span th:text="${song.album}" /> and was released first in
+            <span th:text="${song.releaseYear}" />. <br>
+            <a th:href="'/songs/' + ${song.id} + '/edit'">EDIT</a><br>
+        </li>
+    </ul>
+</p>
+</body>
+</html>
